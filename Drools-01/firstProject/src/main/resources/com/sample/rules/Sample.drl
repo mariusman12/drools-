@@ -1,0 +1,65 @@
+package com.sample.rules
+import com.sample.Flag;
+
+ 
+rule "Flag red"
+    when
+        flag : Flag(colorSearch == "red")
+    then
+        flag.setCountry("Romania, Italy, U.S.A, Belgium, Poland, Monaco, Panama");
+
+     
+end
+
+rule "Flag yellow"
+    when
+        flag : Flag(colorSearch == "yellow")
+    then
+        flag.setCountry("Romania, Sweden, Belgium ");
+
+     
+end
+
+rule "Flag blue"
+    when
+        flag : Flag(colorSearch == "blue")
+    then
+        flag.setCountry("Sweden, Romania, U.S.A, Panama, Greece");
+
+     
+end
+
+rule "Flag green"
+    when
+        flag : Flag(colorSearch == "green")
+    then
+        flag.setCountry("Italy, Ireland ");
+
+     
+end
+
+
+rule "Flag white"
+    when
+        flag : Flag(colorSearch == "white")
+    then
+        flag.setCountry("Italy, Ireland, U.S.A, Poland, Monaco, Panama");
+
+     
+end
+rule "Flag orange"
+    when
+        flag : Flag(colorSearch == "orange")
+    then
+        flag.setCountry("Ireland ");
+
+     
+end
+rule "Flag negru"
+    when
+        flag : Flag(colorSearch == "negru")
+    then
+        flag.setCountry("Belgium");
+
+     
+end

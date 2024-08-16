@@ -1,0 +1,24 @@
+package com.sample.rules
+ 
+import com.sample.DroolsTest.Message;
+global java.util.List myGlobalList;
+ 
+rule "Hello World"
+    when
+        $m : Message( status == Message.HELLO, $myMessage : message )
+    then
+        System.out.println( $myMessage );
+        $m.setMessage( "Goodbye!" );
+        $m.setStatus( Message.GOODBYE );
+        myGlobalList.add( "rule Hello World" );
+        update( $m );
+end
+
+rule "GoodBye"
+    when
+        Message( status == Message.GOODBYE, $myMessage : message )
+    then
+        myGlobalList.add( "rule GoodBye" );
+        System.out.println( $myMessage );
+end
+
